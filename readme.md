@@ -9,7 +9,6 @@ sudo apt-get install gnome-tweak-tool
 sudo apt-get install gnome-shell-extensions
 # 安装浏览器扩展，方便通过浏览器安装软件扩展（主要配置dock,若不配置则忽略）
 sudo apt install chrome-gnome-shell
-sudo apt install firefox-gnome-shell
 # 重启系统
 reboot
 ```
@@ -26,7 +25,6 @@ sudo cp -r WhiteSur* ~/.themes
 - 步骤二、安装MacOS图标
 ```bash
 mkdir ~/.icons
-xz -d 01-WhiteSur.tar.xz
 tar xvf 01-WhiteSur.tar
 sudo cp -r 01-WhiteSur ~/.icons
 
@@ -45,12 +43,12 @@ sudo cp -r 01-WhiteSur ~/.icons
 11-0-Day-thumbnail.jpg
 11-0-Color-Night-thumbnails.jpg
 11-0-Night-thumbnail.jpg
+cp *.jpg /usr/share/backgrounds/
 ```
 - 步骤 5、 设置字体
 ```
 mkdir ~/.fonts
-unzip fonts.zip
-fonts.png
+unzip fonts.zip -d ~/.fonts
 ```
 ## 参考
 https://zhuanlan.zhihu.com/p/259297658+
