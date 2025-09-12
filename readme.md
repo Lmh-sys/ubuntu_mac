@@ -3,11 +3,13 @@
 ```bash
 # TweakTool
 sudo apt-get update
+sudo apt-get install gnome-software
 sudo apt-get install gnome-tweak-tool
 # 安装扩展
 sudo apt-get install gnome-shell-extensions
 # 安装浏览器扩展，方便通过浏览器安装软件扩展（主要配置dock,若不配置则忽略）
 sudo apt install chrome-gnome-shell
+sudo apt install firefox-gnome-shell
 # 重启系统
 reboot
 ```
@@ -32,6 +34,11 @@ sudo cp -r 01-WhiteSur ~/.icons
 - 步骤3：为系统添加类似MacOS的Dock面板
   - Dash to Dock 是 GNOME 扩展。 到目前为止，您已经熟悉GNOME扩展。 只需转到此链接，然后单击切换按钮进行安装。 您的本机扩展坞将自动替换为“ dash-to-dock”。
   - [下载地址](https://extensions.gnome.org/#sort=relevance)
+  不用Firefox
+```shell
+ git clone https://github.com/micheleg/dash-to-dock.git -b tmp/gnome-3.36
+ cd dash-to-dock;make -j; make install
+```
 - 步骤 4、 设置MacOS壁纸
 ```
 11-0-Color-Day-thumbnails.jpg
@@ -47,3 +54,4 @@ fonts.png
 ```
 ## 参考
 https://zhuanlan.zhihu.com/p/259297658+
+https://zhuanlan.zhihu.com/p/406888427
