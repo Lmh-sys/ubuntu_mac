@@ -7,26 +7,29 @@ sudo apt-get install gnome-software
 sudo apt-get install gnome-tweak-tool
 # 安装扩展
 sudo apt-get install gnome-shell-extensions
+sudo apt install gnome-shell-extension-manager
 # 安装浏览器扩展，方便通过浏览器安装软件扩展（主要配置dock,若不配置则忽略）
 sudo apt install chrome-gnome-shell
 # 重启系统
 reboot
+## ubuntu22 以上 打开应用扩展
 ```
 - 打开Tweaks（中文名 优化）并打开 User themes
 ## 二 配置主题
 - 步骤一、安装 macOS GTK 主题
 ```bash
 mkdir ~/.themes
-xz -d WhiteSur-Dark.tar.xz
-tar xvf WhiteSur-Dark.tar
-sudo cp -r WhiteSur* ~/.themes
+xz -d 02-WhiteSur-Dark.tar.xz
+tar xvf 02-WhiteSur-Dark.tar
+mv WhiteSur-Dark $HOME/.themes
 
 ```
 - 步骤二、安装MacOS图标
 ```bash
 mkdir ~/.icons
 tar xvf 01-WhiteSur.tar
-sudo cp -r 01-WhiteSur ~/.icons
+
+mv 01-WhiteSur $HOME/.icons/
 
 ```
 - 步骤3：为系统添加类似MacOS的Dock面板
@@ -34,8 +37,12 @@ sudo cp -r 01-WhiteSur ~/.icons
   - [下载地址](https://extensions.gnome.org/#sort=relevance)
   不用Firefox
 ```shell
- git clone https://github.com/micheleg/dash-to-dock.git -b tmp/gnome-3.36
- cd dash-to-dock;make -j; make install
+ git clone https://github.com/micheleg/dash-to-dock.git
+ git clone https://wget.la/https://github.com/micheleg/dash-to-dock.git
+ git clone https://gitclone.com/github.com/micheleg/dash-to-dock.git
+ git clone https://kkgithub.com/micheleg/dash-to-dock.git -b tmp/gnome-3.36
+ sudo apt install sassc gettext -y
+ cd dash-to-dock&&make -j&& make install
 ```
 - 步骤 4、 设置MacOS壁纸
 ```
@@ -43,12 +50,12 @@ sudo cp -r 01-WhiteSur ~/.icons
 11-0-Day-thumbnail.jpg
 11-0-Color-Night-thumbnails.jpg
 11-0-Night-thumbnail.jpg
-cp *.jpg /usr/share/backgrounds/
+sudo cp *.jpg /usr/share/backgrounds/
 ```
 - 步骤 5、 设置字体
 ```
 mkdir ~/.fonts
-unzip fonts.zip -d ~/.fonts
+tar zxvf fonts.tar.gz -C $HOME/.fonts
 ```
 ## 参考
 https://zhuanlan.zhihu.com/p/259297658+
